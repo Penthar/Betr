@@ -1,5 +1,6 @@
 # Betr
 **Betr - Android fitness app** that supports progression tracking, workout planning and provides real-time exercise guidance.
+
 <img src=https://github.com/Penthar/Betr/assets/124145941/fc6b8632-3d14-46ce-92e4-771b76bbf541 width="20%" height="20%">
 
 *In the picture you may see part of the progression system, allowing the user to see his character's average fitness score and advancement towards the next level*
