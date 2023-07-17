@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ImportFragment"
+    android:paddingTop="?android:actionBarSize">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Betr"
+            android:layout_gravity="center"
+            android:textSize="30sp"
+
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Import workout"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_margin="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prog_bar"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/workouts_layout">
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:hint="Workout Code"
+            android:layout_margin="50dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:id="@+id/codeInput"
+            android:background="@drawable/workout_id_edittext_background"
+            android:gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/AddNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:background="@drawable/button_login"
+            android:drawableLeft="@drawable/baseline_add_24"
+            android:text="Add Workout"
+
+            />
+
+
+    </LinearLayout>
+
+</FrameLayout>

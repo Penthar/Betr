@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="color_array">
+        <item>#FF0000</item>
+        <item>#06BA06</item>
+        <item>#0000FF</item>
+        <item>#FFA500</item>
+        <item>#FF00FF</item>
+        <item>#00FFFF</item>
+        <item>#800000</item>
+        <item>#008000</item>
+        <item>#000080</item>
+        <item>#808000</item>
+        <item>#008080</item>
+        <item>#673AB7</item>
+        <item>#808080</item>
+
+    </array>
+</resources>

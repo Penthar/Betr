@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="680dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:background="@drawable/register_layout"
+        android:layout_marginTop="60dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Betr"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"/>
+
+
+    <EditText
+        android:id="@+id/EmailAddressInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="E-mail"
+
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="50dp"
+        android:drawableLeft="@drawable/baseline_mail_outline_24"
+        />
+
+    <EditText
+        android:id="@+id/PasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="50dp"
+        android:hint="Password"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        />
+    <EditText
+        android:id="@+id/NameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="50dp"
+        android:hint="Name"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/RegisterButton"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/button_login"
+        android:text="Register"/>
+
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prog_bar"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

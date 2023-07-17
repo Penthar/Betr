@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Betr</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_map">Map</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_workout">Workout</string>
+    <string name="title_import">Import</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="exercise_category">
+        <item>Upper Body</item>
+        <item>Lower Body</item>
+        <item>Abdominal</item>
+    </string-array>
+</resources>

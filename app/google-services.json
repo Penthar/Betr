@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040144886155",
+    "project_id": "betr-b3ddb",
+    "storage_bucket": "betr-b3ddb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040144886155:android:9261f05363e5566809278e",
+        "android_client_info": {
+          "package_name": "com.project.betr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040144886155-g331h9lvqiq0hucl5mussrmfuh3abq0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZjIYmjqnt4V4n8-AeZajSCvN2mLQDQQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040144886155-g331h9lvqiq0hucl5mussrmfuh3abq0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

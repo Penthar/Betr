@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimerActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Betr"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/workout_name"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/Table"
+                    >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Excercise name"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Weight"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Reps"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Sets"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Rest"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="Duration"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="category"
+                            android:paddingLeft="10dp"
+                            android:background="@drawable/table_block_border"
+                            android:textColor="@color/black"
+                            />
+
+                    </TableRow>
+
+
+                </TableLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="55dp"
+        android:id="@+id/startTimer"
+        android:text="START TIMER"
+        android:background="@drawable/timer_button"
+        android:textColor="#287C2B"/>
+
+
+</LinearLayout>

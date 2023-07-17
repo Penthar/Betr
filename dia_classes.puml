@@ -1,0 +1,143 @@
+@startuml
+class com.project.betr.Category_Spinner {
+- int dpToPx(int)
++ String getCategory()
++ void setCategory(String)
+}
+class com.project.betr.Workout {
+- String workout_Name
+- String ID
+- ArrayList<Exercise> exerciseList
++ String getWorkout_Name()
++ String getID()
++ void setID(String)
++ ArrayList<Exercise> getExerciseList()
++ void setExerciseList(ArrayList<Exercise>)
+}
+class com.project.betr.Tile {
+~ boolean completed
+~ int icon_code
+~ int imageInRow
+~ int imageInCol
+~ int animDuration
+- int dpToPx(int)
+- AnimationDrawable spriteSheetToFrames(int,int,int,int)
+}
+class com.project.betr.TimerPicker {
+- NumberPicker minutePicker
+- NumberPicker secondPicker
+- int selectedMinute
+- int selectedSecond
+~ AlertDialog.Builder builder
+- void init()
++ int getSelectedMinute()
++ int getSelectedSecond()
+- void updateTextView()
+- int dpToPx(int)
+- void removeError()
++ void setPicker(int)
+}
+class com.project.betr.User {
+- String userID
+- String name
+- ArrayList<Workout> workoutList
+- int character_pic_id
+~ double score
+- ArrayList<Boolean> completion
++ String getUserID()
++ String getName()
++ ArrayList<Workout> getWorkoutList()
++ void addToWorkoutList(Workout)
++ int getCharacter_pic()
++ void setCharacter_pic(int)
++ void setWorkoutList(ArrayList<Workout>)
++ ArrayList<Boolean> getCompletion()
++ void setCompletion(ArrayList<Boolean>)
++ double getScore()
++ void setScore(double)
++ void calculateTotalUserScore()
++ double addToAverage(double,double)
+}
+class com.project.betr.DBHelper {
+- FirebaseDatabase fbDatabase
+- DatabaseReference dbReference
+- ArrayList<User> usersList
++ String exampleID
++ String getExampleID()
++ void addUser(User,DataStatus)
++ void addWorkoutToUser(String,Workout,DataStatus)
++ void updateUserCompletionList(String,ArrayList<Boolean>)
++ void updateUserScore(String,double)
++ void updateUserWorkoutList(String,Workout)
++ void deleteWorkout(String,String)
++ void getUserFromUID(String,DataStatus)
++ void getWorkoutFromID(String,DataStatus)
++ void set_all_exercise_to_inactive(String,String,Workout)
+}
+interface com.project.betr.DBHelper$DataStatus {
+~ void DataIsLoaded(User)
+~ void DataIsInserted(boolean)
+~ void getWorkout(Workout)
+~ void DataIsDeleted()
+}
+class com.project.betr.Exercise {
+~ Date date
+~ String name
+~ int weight
+~ int sets
+~ int reps
+~ int rest_time
+~ int set_duration
+~ String id
+~ int is_active
+~ String exercise_category
+~ double exercise_score
++ Date getDate()
++ String getName()
++ int getWeight()
++ int getSets()
++ int getReps()
++ int getRest_time()
++ int getSet_duration()
++ String getId()
++ int isActive()
++ String getExercise_category()
++ double getExercise_score()
++ void setDate(Date)
++ void setName(String)
++ void setWeight(int)
++ void setSets(int)
++ void setReps(int)
++ void setRest_time(int)
++ void setSet_duration(int)
++ void setId(String)
++ void setIs_active(int)
++ void setExercise_category(String)
++ void calculateExercise_score()
+}
+class com.project.betr.TimerService {
+- int currentTime
+- Thread timerThread
+- int maxTime
+~ NotificationManagerCompat notificationManager
+~ NotificationCompat.Builder statusBarNotification
+- {static} String CHANNEL_ID
+~ ArrayList<Exercise> exerciseList
++ void onCreate()
++ void createNotification()
++ void updateNotification(int,int,int,int,String)
++ int onStartCommand(Intent,int,int)
++ void onDestroy()
++ IBinder onBind(Intent)
+- int getTimeInMilis(int)
++ String getTimeInFormat(int)
+}
+
+
+com.project.betr.AppCompatSpinner <|-- com.project.betr.Category_Spinner
+android.widget.RelativeLayout <|-- com.project.betr.Tile
+com.project.betr.AppCompatTextView <|-- com.project.betr.TimerPicker
+com.project.betr.DBHelper +.. com.project.betr.DBHelper$DataStatus
+java.io.Serializable <|.. com.project.betr.Exercise
+android.app.Service <|-- com.project.betr.TimerService
+@enduml

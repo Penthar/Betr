@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_workout"
+        android:icon="@drawable/baseline_timer_24"
+        android:title="@string/title_workout" />
+
+    <item
+        android:id="@+id/navigation_Edit"
+        android:icon="@drawable/baseline_edit_24"
+        android:title="@string/title_edit" />
+
+    <item
+        android:id="@+id/navigation_import"
+        android:icon="@drawable/baseline_cloud_download_24"
+        android:title="@string/title_import" />
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/baseline_map_24"
+        android:title="@string/title_map" />
+
+</menu>

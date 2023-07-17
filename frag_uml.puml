@@ -1,0 +1,108 @@
+@startuml
+class com.project.betr.ui.MapFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ ArrayList<Boolean> completedList
+~ RelativeLayout background_layout
+~ User currentuser
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ TextView result
+~ Double score
+~ AlertDialog.Builder builder
+~ AlertDialog dialog
+~ ValueAnimator backgroundAnimator
++ {static} MapFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- AnimationDrawable spriteSheetToFrames(int,int,int,int)
+- int dpToPx(int)
+- void create_tiles()
++ void onResume()
++ void onClick(View)
++ void battle(int)
++ int returnPlayerIcon(double)
++ void beam_attack(boolean,RelativeLayout)
+}
+class com.project.betr.ui.EditFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ Button create_workout
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workouts_layout
+~ ProgressBar progressBar
++ {static} EditFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onClick(View)
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ void onResume()
+}
+class com.project.betr.ui.ImportFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ EditText codeInput
+~ DBHelper dbHelper
+~ FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workoutsLayout
+~ ProgressBar progressBar
+~ ArrayList<Workout> exampleWorkoutsList
+~ Button selectedWorkout
+~ Button addWorkout
+~ ArrayList<Button> workoutButtonsList
+~ Workout currentworkout
++ {static} ImportFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void getExampleWorkouts()
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ void onClick(View)
+}
+class com.project.betr.ui.WorkoutFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workouts_layout
+~ TextView welcome
+~ ProgressBar progressBar
+- String mParam1
+- String mParam2
++ {static} WorkoutFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onClick(View)
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ Workout getWorkoutInList(ArrayList<Workout>,String)
+}
+
+
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.MapFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.MapFragment
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.EditFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.EditFragment
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.ImportFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.ImportFragment
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.WorkoutFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.WorkoutFragment
+@enduml

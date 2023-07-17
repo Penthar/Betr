@@ -1,0 +1,230 @@
+@startuml
+class com.project.betr.Create_Workout_Activity {
+~ TableLayout tableLayout
+~ Button addRowButton
+~ Button saveButton
+~ EditText workoutNameText
+~ ArrayList[] matrix
+~ ArrayList<Button> removeRowList
+~ ArrayList<Exercise> exerciseList
+~ ArrayList<TableRow> rowsList
+~ DBHelper dbHelper
+~ FirebaseAuth fbauth
+# void onCreate(Bundle)
++ void onClick(View)
+- int dpToPx(int)
+- void addRow()
+- void init_matrix()
+- boolean check_matrix_empty()
+- void row_To_Exercise(int)
++ Workout create_workout()
+- void removeRow(int)
+}
+class com.project.betr.RegisterActivity {
+~ Button Register
+~ EditText email_input
+~ EditText password_input
+~ EditText name_input
+~ ProgressBar progressBar
+~ FirebaseAuth fbAuth
+~ DBHelper dbHelper
+~ boolean Success
+# void onCreate(Bundle)
++ void onClick(View)
+- void inProgress(boolean)
+- boolean isEmpty()
+- void addUserToDB(User)
+}
+class com.project.betr.ui.MapFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ ArrayList<Boolean> completedList
+~ RelativeLayout background_layout
+~ User currentuser
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ TextView result
+~ Double score
+~ AlertDialog.Builder builder
+~ AlertDialog dialog
+~ ValueAnimator backgroundAnimator
++ {static} MapFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- AnimationDrawable spriteSheetToFrames(int,int,int,int)
+- int dpToPx(int)
+- void create_tiles()
++ void onResume()
++ void onClick(View)
++ void battle(int)
++ int returnPlayerIcon(double)
++ void beam_attack(boolean,RelativeLayout)
+}
+class com.project.betr.ui.EditFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ Button create_workout
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workouts_layout
+~ ProgressBar progressBar
++ {static} EditFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onClick(View)
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ void onResume()
+}
+class com.project.betr.MenuActivity {
+- ActivityMenuBinding binding
+~ Toolbar toolbar
+~ ImageView player_icon_image
+~ int imageid
+~ double userScore
+~ String username
+# void onCreate(Bundle)
+# void onResume()
++ int returnPlayerIcon(double)
++ void onClick(View)
+- int dpToPx(int)
+}
+class com.project.betr.ui.ImportFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+~ EditText codeInput
+~ DBHelper dbHelper
+~ FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workoutsLayout
+~ ProgressBar progressBar
+~ ArrayList<Workout> exampleWorkoutsList
+~ Button selectedWorkout
+~ Button addWorkout
+~ ArrayList<Button> workoutButtonsList
+~ Workout currentworkout
++ {static} ImportFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+- void getExampleWorkouts()
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ void onClick(View)
+}
+class com.project.betr.MainActivity {
+~ Button SignIn
+~ TextView Register
+~ EditText email_input
+~ EditText password_input
+~ ProgressBar progressBar
+~ FirebaseAuth fbAuth
+# void onCreate(Bundle)
++ void onClick(View)
+- void inProgress(boolean)
+- boolean isEmpty()
+}
+class com.project.betr.TimerActivity {
+~ Button startTimer
+~ TextView workoutName
+~ ArrayList<Exercise> exerciseList
+~ TableLayout tableLayout
+# void onCreate(Bundle)
++ void onClick(View)
+- void populate_table()
+- TextView create_block(int,int)
+- int dpToPx(int)
++ String formatTime(int)
+- void createNotificationChannel()
+}
+class com.project.betr.Update_Workout_Activity {
+~ TableLayout tableLayout
+~ Button addRowButton
+~ Button saveButton
+~ EditText workoutNameText
+~ ArrayList[] matrix
+~ ArrayList<Button> removeRowList
+~ ArrayList<Exercise> exerciseList
+~ ArrayList<TableRow> rowsList
+~ DBHelper dbHelper
+~ FirebaseAuth fbauth
+~ User currentUser
+~ String workoutID
+~ Workout currentWorkout
+~ Button deleteExercise
+~ AlertDialog.Builder builder
+~ ArrayList<Button> graphButtons
+~ boolean weightcheck
+~ TextView codeText
+# void onCreate(Bundle)
++ void onClick(View)
+- int dpToPx(int)
+- void addRow(String,boolean)
+- void init_matrix()
+- boolean check_matrix_empty()
+- void row_To_Exercise(int)
++ Workout create_workout()
+- void removeRow(int)
+- Workout getCurrentWorkout()
+- void populateRows()
++ void create_graph_dialog(String)
++ int getLargestWeight(ArrayList<Exercise>)
++ double getLargestScore(ArrayList<Exercise>)
++ void onCheckedChanged(RadioGroup,int)
+}
+class com.project.betr.ui.WorkoutFragment {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- DBHelper dbHelper
+- FirebaseAuth fbAuth
+~ User currentUser
+~ LinearLayout workouts_layout
+~ TextView welcome
+~ ProgressBar progressBar
+- String mParam1
+- String mParam2
++ {static} WorkoutFragment newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void onClick(View)
++ void populate_workouts()
++ void setButtonVisuals(LinearLayout.LayoutParams,int[],ArrayList<Workout>,int,LinearLayout)
+- int dpToPx(int)
++ Workout getWorkoutInList(ArrayList<Workout>,String)
+}
+
+
+com.project.betr.OnClickListener <|.. com.project.betr.Create_Workout_Activity
+androidx.appcompat.app.AppCompatActivity <|-- com.project.betr.Create_Workout_Activity
+com.project.betr.OnClickListener <|.. com.project.betr.RegisterActivity
+android.app.Activity <|-- com.project.betr.RegisterActivity
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.MapFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.MapFragment
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.EditFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.EditFragment
+com.project.betr.OnClickListener <|.. com.project.betr.MenuActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.project.betr.MenuActivity
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.ImportFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.ImportFragment
+com.project.betr.OnClickListener <|.. com.project.betr.MainActivity
+android.app.Activity <|-- com.project.betr.MainActivity
+com.project.betr.OnClickListener <|.. com.project.betr.TimerActivity
+android.app.Activity <|-- com.project.betr.TimerActivity
+com.project.betr.OnClickListener <|.. com.project.betr.Update_Workout_Activity
+com.project.betr.OnCheckedChangeListener <|.. com.project.betr.Update_Workout_Activity
+androidx.appcompat.app.AppCompatActivity <|-- com.project.betr.Update_Workout_Activity
+com.project.betr.ui.OnClickListener <|.. com.project.betr.ui.WorkoutFragment
+androidx.fragment.app.Fragment <|-- com.project.betr.ui.WorkoutFragment
+@enduml
